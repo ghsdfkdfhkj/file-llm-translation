@@ -2,7 +2,10 @@ import tkinter as tk
 from tkinterdnd2 import TkinterDnD
 from gui.main_window import MainWindow
 
-if __name__ == "__main__":
+def main():
     root = TkinterDnD.Tk()
     app = MainWindow(root)
-    root.mainloop() 
+    root.mainloop()
+
+if __name__ == "__main__":
+    main() 
