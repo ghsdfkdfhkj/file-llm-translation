@@ -124,5 +124,6 @@ dmypy.json
 cython_debug/
 
 # Personal config files
+app_config
 config.json
 .cursor/ 
