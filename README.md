@@ -13,6 +13,7 @@ A program that translates long game files using LLM APIs.
 ## Note on Testing
 
 *   This program has been primarily tested using the Google Gemini LLM provider.
+*   Tested based on Korean translation.
 
 ## Folder Structure
 
