@@ -31,7 +31,6 @@ MANIFEST
 #  Usually these files are written by a script, but they may be committed to
 #  repositories.
 *.manifest
-*.spec
 
 # Installer logs
 pip-log.txt
@@ -124,6 +123,33 @@ dmypy.json
 cython_debug/
 
 # Personal config files
-app_config
 config.json
-.cursor/ 
+.cursor/
+
+# API Keys and Config
+api_keys.json
+app_config.json
+
+# IDE specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Windows specific
+*.exe
+*.msi
+*.bat
+Thumbs.db
+Desktop.ini
+
+# macOS specific
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Installer files
+installer/
+dist/
+build/
+*.spec 
