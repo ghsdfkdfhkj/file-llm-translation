@@ -1,8 +1,8 @@
-# from PyQt6.QtWidgets import QWidget # 예시
+# from PyQt6.QtWidgets import QWidget # Example
 
 # class LLMSelector(QWidget):
 #     def __init__(self, parent=None):
 #         super().__init__(parent)
-#         # LLM 선택 관련 UI 요소들 정의 
+#         # Define UI elements for LLM selection
 
 # Custom widgets will be defined here 

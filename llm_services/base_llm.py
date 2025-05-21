@@ -8,10 +8,10 @@ class BaseLLM(ABC):
 
     @abstractmethod
     def get_models(self):
-        """사용 가능한 모델 목록을 반환합니다."""
+        """Returns a list of available models."""
         pass
 
     @abstractmethod
     def translate(self, text, target_language, model_name):
-        """주어진 텍스트를 대상 언어로 번역합니다."""
+        """Translates the given text to the target language."""
         pass 

@@ -1,19 +1,23 @@
-# 게임 번역 프로그램
+# File LLM Translation
 
-LLM API를 활용하여 긴 게임 파일을 번역하는 프로그램입니다.
+A program that translates long game files using LLM APIs.
 
-## 주요 기능
+## Main Features
 
-*   다양한 LLM 선택 (OpenAI, Anthropic, Google Gemini 등)
-*   API 키 입력
-*   LLM 모델 자동 감지 및 선택
-*   다양한 출력 언어 선택
-*   파일 입력 및 번역된 파일 내보내기
+*   Various LLM options (OpenAI, Anthropic, Google Gemini, etc.)
+*   API key input
+*   Automatic LLM model detection and selection
+*   Multiple output language options
+*   File input and translated file export
 
-## 폴더 구조
+## Note on Testing
+
+*   This program has been primarily tested using the Google Gemini LLM provider.
+
+## Folder Structure
 
 ```
-translation_project/
+file-llm-translation/
 ├── main.py
 ├── gui/
 │   ├── __init__.py
@@ -37,12 +41,24 @@ translation_project/
 └── requirements.txt
 ```
 
-## 설치
+## Installation
 
-1.  저장소를 클론합니다.
-2.  가상 환경을 생성하고 활성화합니다. (권장)
-3.  `pip install -r requirements.txt` 명령으로 의존성 라이브러리를 설치합니다.
+1.  Clone the repository
+2.  Install dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+3.  Run the program:
+    ```bash
+    python main.py
+    ```
 
-## 사용법
+## Usage
 
-`python main.py` 명령으로 프로그램을 실행합니다. 
+1.  Select LLM provider (OpenAI, Anthropic, or Google Gemini)
+2.  Enter API key
+3.  Select model
+4.  Choose output language
+5.  Select input file
+6.  Click "Start Translation"
+7.  Export translated results 
