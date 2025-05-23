@@ -152,4 +152,9 @@ Desktop.ini
 installer/
 dist/
 build/
-*.spec 
+*.spec
+
+# Setup and distribution files
+setup.iss
+setup.py
+MANIFEST.in 
