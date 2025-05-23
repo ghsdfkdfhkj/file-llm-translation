@@ -100,3 +100,37 @@ Follow these rules strictly:
         except Exception as e:
             print(f"Translation failed with OpenAI ({model_name}): {e}")
             return f"Translation error with OpenAI: {e}" 
+
+    def get_completion(self, prompt, temperature=0.3):
+        """
+        Get a completion from OpenAI.
+        
+        Args:
+            prompt (str): The prompt to send to the model
+            temperature (float, optional): Controls randomness of output. Defaults to 0.3.
+            
+        Returns:
+            str: The generated completion text
+        """
+        if not self.api_key:
+            raise ValueError("API key is required for OpenAI")
+        
+        client = openai.OpenAI(api_key=self.api_key)
+        
+        try:
+            # Use the model that was set, or fall back to a default model
+            model_name = self.model or 'gpt-3.5-turbo'
+            
+            response = client.chat.completions.create(
+                model=model_name,
+                messages=[
+                    {"role": "system", "content": "You are a helpful assistant."},
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=temperature
+            )
+            
+            return response.choices[0].message.content
+        except Exception as e:
+            print(f"Error in OpenAI service: {e}")
+            raise 

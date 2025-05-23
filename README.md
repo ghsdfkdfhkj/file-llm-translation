@@ -15,33 +15,6 @@ A program that translates long game files using LLM APIs.
 *   This program has been primarily tested using the Google Gemini LLM provider.
 *   Tested based on Korean translation.
 
-## Folder Structure
-
-```
-file-llm-translation/
-├── main.py
-├── gui/
-│   ├── __init__.py
-│   ├── main_window.py
-│   └── widgets.py
-├── llm_services/
-│   ├── __init__.py
-│   ├── base_llm.py
-│   ├── openai_service.py
-│   ├── anthropic_service.py
-│   └── google_gemini_service.py
-├── translation_core/
-│   ├── __init__.py
-│   └── translator.py
-├── utils/
-│   ├── __init__.py
-│   ├── file_handler.py
-│   └── config_manager.py
-├── assets/
-└── README.md
-└── requirements.txt
-```
-
 ## Installation
 
 1.  Clone the repository

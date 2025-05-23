@@ -42,7 +42,8 @@ if __name__ == '__main__':
         "last_llm_provider": "Google Gemini",
         "last_selected_model": "gemini-1.5-pro-latest",
         "last_output_language_combo": "Korean (한국어)",
-        "last_output_language_custom": ""
+        "last_output_language_custom": "",
+        "last_chunk_size": "1000"  # Add chunk size setting
     }
     save_app_settings(mock_settings_to_save)
     

@@ -109,3 +109,35 @@ Translated text in {target_language}:"""
         except Exception as e:
             print(f"Translation failed with Anthropic ({model_name}): {e}")
             return f"Translation error with Anthropic: {e}" 
+
+    def get_completion(self, prompt, temperature=0.3):
+        """
+        Get a completion from Anthropic.
+        
+        Args:
+            prompt (str): The prompt to send to the model
+            temperature (float, optional): Controls randomness of output. Defaults to 0.3.
+            
+        Returns:
+            str: The generated completion text
+        """
+        if not self.api_key:
+            raise ValueError("API key is required for Anthropic")
+        
+        try:
+            # Use the model that was set, or fall back to a default model
+            model_name = self.model or 'claude-3-haiku-20240307'
+            
+            message = self.client.messages.create(
+                model=model_name,
+                max_tokens=4000,
+                temperature=temperature,
+                messages=[
+                    {"role": "user", "content": prompt}
+                ]
+            )
+            
+            return message.content[0].text
+        except Exception as e:
+            print(f"Error in Anthropic service: {e}")
+            raise 

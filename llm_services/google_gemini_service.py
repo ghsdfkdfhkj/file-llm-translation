@@ -209,4 +209,47 @@ Translated text:"""
         except Exception as e:
             error_msg = f"Translation error with model {model_name}: {str(e)}"
             print(error_msg)
-            return f"Error: {error_msg}" 
+            return f"Error: {error_msg}"
+
+    def get_completion(self, prompt, temperature=0.3):
+        """
+        Get a completion from Gemini model.
+        
+        Args:
+            prompt (str): The prompt to send to the model
+            temperature (float, optional): Controls randomness of output. Defaults to 0.3.
+            
+        Returns:
+            str: The generated completion text
+        """
+        if not self.api_key:
+            raise ValueError("API key is required for Google Gemini")
+        
+        # Set up API key
+        genai.configure(api_key=self.api_key)
+        
+        try:
+            # Use the model that was set, or fall back to a default model
+            model_name = self.model or 'gemini-1.5-flash'
+            
+            model = genai.GenerativeModel(model_name=model_name)
+            
+            response = model.generate_content(prompt)
+            
+            # Handle potential errors in response
+            if hasattr(response, 'text'):
+                return response.text
+            else:
+                # Process candidates if text attribute not available
+                if hasattr(response, 'candidates') and response.candidates:
+                    candidate = response.candidates[0]
+                    if hasattr(candidate, 'content') and candidate.content:
+                        if hasattr(candidate.content, 'parts') and candidate.content.parts:
+                            return candidate.content.parts[0].text
+                
+                # If we couldn't extract text using any method, raise an error
+                raise RuntimeError("Could not extract text from Gemini response")
+                
+        except Exception as e:
+            print(f"Error in Google Gemini service: {e}")
+            raise 

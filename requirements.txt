@@ -1,6 +1,7 @@
-openai
-anthropic
-google-generativeai
+openai>=1.0.0
+anthropic>=0.7.0
+google-generativeai>=0.3.0
 chardet
 tqdm 
-tkinterdnd2
+tkinterdnd2>=0.3.0
+langdetect>=1.0.9
